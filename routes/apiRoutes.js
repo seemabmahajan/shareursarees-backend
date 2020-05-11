@@ -7,14 +7,20 @@ const ctrl = require('../controllers')
 router.get('/profile/:id', ctrl.profile.show)
 router.put('/profile/:id', ctrl.profile.updateProfile)
 
+router.post('/myshop/:id/sari', ctrl.sari.createSari)
+
 
 //View Saris
 
 router.get('/saris', ctrl.sari.index)
 
 
-router.post('/profile/:id/sari', ctrl.sari.createSari)
-router.get('/profile/:id/sari', ctrl.sari.showMySaris)
+//router.post('/myshop/:id/sari', ctrl.sari.createSari)
+router.get('/myshop/:id', ctrl.sari.showMySaris)
+
+router.delete('/user/:userId/saris/:sariId',ctrl.sari.deleteSari)
+
+router.put('/user/:userId/saris/:sariId',ctrl.sari.updateSari)
 
 module.exports = router
 
