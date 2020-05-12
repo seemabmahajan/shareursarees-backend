@@ -118,7 +118,7 @@ const deleteSari=(req,res)=>{
                    return res.status(400).json({status: 400, error: 'user not found!'}) 
                 }
         
-                let updatingSari=found.mySaris.id(req.params.sariId);
+                let updatingSari=foundUser.mySaris.id(req.params.sariId);
         
                 if(!updatingSari){
                      return res.status(400).json({status: 400, message: "could not find sari"})
@@ -127,6 +127,7 @@ const deleteSari=(req,res)=>{
                 updatingSari.image=req.body.image;
                 updatingSari.catagory=req.body.catagory;
                 updatingSari.description=req.body.description;
+                
         
                 foundUser.save((err,saveUser)=>{
                     if(err){
