@@ -14,7 +14,7 @@ const PORT = process.env.PORT || 3001;
 // Middleware
 
 const corsOptions = {
-    origin : [`http://localhost:3000`],
+    origin : [`http://localhost:3000`, `https://share-ur-sarees.herokuapp.com`],
     credentials : true,
     optionSuccessStatus : 200
 }
